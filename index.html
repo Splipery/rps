@@ -7,10 +7,62 @@
     <title>Rock paper scissors</title>
     <script>
         let options = ['Rock', 'Paper', 'Scissors'];
-        let computerPlay = function () {
+        
+        let comparisons = {"ROCK": "SCISSORS", "SCISSORS": "PAPER", "PAPER": "ROCK"};
+
+        function computerPlay() {
             let choice = Math.floor(Math.random()*3);
-            console.log(choice);
-        };
+            return options[choice];
+        }
+
+        function playRound(playerSelection, computerSelection){
+            playerSelection = playerSelection.toUpperCase();
+            computerSelection = computerSelection.toUpperCase();
+
+            let loser = comparisons[playerSelection];
+            
+            let result;
+            let winner;
+            if(computerSelection == loser) {
+                result = "WIN";
+                winner = "p";
+            } else if (computerSelection == playerSelection) {
+                result = "DRAW!";
+                winner = "n";
+            } else {
+                result = "LOSE";
+                winner = "c";
+            }
+
+            return [winner, `You chose ${playerSelection.toLowerCase()}... computer chose ${computerSelection.toLowerCase()}. You ${result}!`];
+        }
+
+        function game(){
+            let computerScore = 0;
+            let playerScore = 0;
+            for(let i = 0; i <= 5; i++){
+                let choice = prompt("Rock, Paper, Scissors?");
+
+                let compChoice = computerPlay();
+                let result = playRound(choice, compChoice);
+                console.log(result[1]);
+                switch(result[0]){
+                    case "p":
+                        playerScore++;
+                        break;
+                    case "c":
+                        computerScore++;
+                        break;
+                }
+            }
+
+            if(playerScore > computerScore){
+                console.log(`YOU WIN: ${playerScore} BEATS ${computerScore}`);
+            } else {
+                console.log(`YOU LOSE: ${playerScore} IS WORSE THAN ${computerScore}`);
+            }
+        }
+        
     </script>
 </head>
 <body>
