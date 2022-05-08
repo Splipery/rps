@@ -1,2 +1,2 @@
 # rps
-Need to make this pretty with CSS. Functionality is basically there though.
+Made it pretty, could be prettier.
