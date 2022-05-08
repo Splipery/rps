@@ -9,24 +9,40 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+<div id="container">
+    <h1>Choose Your Move</h1>
     <div id="control">
-        <button data-move="Rock" class="move">Rock</button>
-        <button data-move="Paper" class="move">Paper</button>
-        <button data-move="Scissors" class="move">Scissors</button>
+        <div data-move="Rock" class="move">Rock</div>
+        <div data-move="Paper" class="move">Paper</div>
+        <div data-move="Scissors" class="move">Scissors</div>
     </div>
-    <h2 id="announcements"></h2>
+    <div id="announcementContainer">
+        <h2 id="announcements"></h2>
+    </div>
     <div id="choices">
-        <label for="playerC">Player Move: </label>
-        <div id="playerC"></div>
-        <label for="compC">Computer Move: </label>
-        <div id="compC"></div>
+
+        <div class="left">
+            <h3>Player Move</h3>
+            <div id="playerC"></div>
+        </div>
+
+        <div class="right">
+            <h3>Computer Move</h3>
+            <div id="compC"></div>
+        </div>
+
     </div>
     <div id="results">
-        <label for="playerR">Player Score: </label>
-        <div id="playerR"></div>
-        <label for="compR">Computer Score: </label>
-        <div id="compR"></div>
+        <div class="left">
+            <h3>Player Score</h3>
+            <div id="playerR"></div>
+        </div>
+        <div class="right">
+            <h3>Computer Score</h3>
+            <div id="compR"></div>
+        </div>
     </div>
+</div>
 </body>
 
 </html>
