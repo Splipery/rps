@@ -3,6 +3,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: cornflowerblue;
 }
 
 h1 {
@@ -16,8 +17,9 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px seagreen solid;
+    border: 3px black solid;
     border-radius: 50px;
+    background-color: whitesmoke;
 }
 
 #control {
